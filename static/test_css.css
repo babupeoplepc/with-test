@@ -1,0 +1,18 @@
+.test_profile{
+  width : 100px;
+  display : block;
+  margin : auto;
+}
+h1{
+    color:red;
+}
+.test_h1{
+    color:red;
+}
+
+.logo_test
+{
+    height:23px;
+    width:97px;
+    background:url(static/iu.jpg)
+}

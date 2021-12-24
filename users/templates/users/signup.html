@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>signup page</title>
+</head>
+<body>
+<br>
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>아이디</p>
+    <input type="text" name="username">
+    <p>비밀번호</p>
+    <input type="password" name="password">
+    <p>성</p>
+    <input type="text" name="firstname">
+    <p>이름</p>
+    <input type="text" name="lastname">
+    <p>이메일</p>
+    <input type="text" name="email">
+    <p>학번</p>
+    <input type="text" name="student_id">
+    <input type="submit" value="회원가입">
+
+</form>
+
+
+</body>
+</html>
