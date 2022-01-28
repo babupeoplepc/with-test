@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css study</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css"  href="{% static 'lesson_reservation.css' %}?after">
+    <link rel="stylesheet" type="text/javascript"  href="{% static 'lesson_reservation.js' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
+</head>
+
+<script>
+    let sortDirection = false;
+    let personData = [
+        { name: 'Dyalan', age: 31 },
+        { name: 'Christopher', age: 30 },
+        { name: 'Israel', age: 29 },
+        { name: 'ThugNasty', age: 14 },
+        { name: 'Dollan', age: 31 }
+    ];
+
+    window.onload = () => {
+        loadTableData(personData);
+    };
+
+    loadTableData(personData);
+    function loadTableData(personData){
+        const tableBody = document.getElementById('tableData');
+        
+        let dataHtml = '';
+
+        for(let person of personData){
+            dataHtml += ('<tr><td>'+person.name+'</td><td>'+person.age+'</td></tr>');
+        }
+
+        let TestTd = "<td>hello<a href='/test/css_study/' onclick='window.open(this.href, '_blank', 'width=800, height=600'); return false;'>클릭</a></td>";
+        dataHtml += TestTd;
+        
+        console.log(dataHtml);
+        tableBody.innerHTML = dataHtml;
+    }
+
+    function sortColumn(columnName){
+        const dataType = typeof personData[0][columnName];
+        console.log(dataType);
+        sortDirection = !sortDirection;
+
+        switch(dataType)
+        {
+            case 'number' :
+                sortNumberColumn(sortDirection, columnName);
+                break;
+                
+        }
+        
+        loadTableData(personData);
+    }
+
+    function sortNumberColumn(sort, columnName){
+        personData = personData.sort((p1,p2)=>{
+            return sort ? p1[columnName] - p2[columnName] : p2[columnName] - p1[columnName];
+        })
+    }
+
+</script>
+
+<style>
+    table{
+        border-collapse: collapse;
+        width:100%;
+        text-align: center;
+        
+    
+    }
+    td, th{
+        border: 1px solid #cccccc;
+        padding: 10px;
+    }
+    th{
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    tr:nth-child(even){
+        background-color: #dddddd;
+    }
+
+    tr:hover{
+        color : white;
+        background-color: black;
+    }
+</style>
+
+
+
+<body>
+<h1>Table 기본</h1>
+<table>
+    <thead>
+        <tr>
+            <th onclick="sortColumn('Name')">Name</th>
+            <th onclick="sortColumn('age')">Age</th>
+        </tr>
+    </thead>
+    <tbody id="tableData">
+        
+    </tbody>
+
+</table>
+    
+
+<div class="test_dev">
+    
+</div>
+<span class="test_span">
+    
+</span>
+
+<button class="test_btn">
+    ok
+</button>
+<script>
+    $('.test_btn').click(function(){
+        $('.test_span').html('hihi');
+    })
+</script>
+
+<style>
+    input[id="popup"]{
+        display:none;
+    }
+    input[id="popup"] + label{
+        display:inline-block;
+        padding: 20px;
+        background-color: #ffcd41;
+        color: #fff;
+    }
+    input[id="popup"] + label + div{
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index:100;
+    }
+    style[id="popup"] + label + div > div{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width:500px;
+        height:300px;
+        background: #fff;
+        z-index: 2;
+    }
+    style[id="popup"] + label + div > div > label{
+        position:absolute;
+        top : 0%;
+        right: 0%;
+        transform: translate(40%, -40%);
+        padding: 20px;
+        background: #dd5347;
+        border-radius: 100%;
+        z-index: 1;
+    }
+    input[id="popup"] + label + div > label{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background: rgba(0,0,0,0.9);
+        z-index:1;
+    }
+
+</style>
+
+<input type = "checkbox" id="popup">
+<label for="popup">View</label>
+<div>
+    <div>
+        <label for="popup"></label>
+    </div>
+    <label for="popup"></label>
+</div>
+
+
+</body>

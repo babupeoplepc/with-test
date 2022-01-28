@@ -1,18 +1,118 @@
-.test_profile{
-  width : 100px;
-  display : block;
-  margin : auto;
+.dashboard_search_tap{
+    position: relative;
+
+    box-shadow: inset 0 2px 5px rgb(0 0 0 / 5%);
+    border-radius: 10px;
+    border-color: #eee;
+    background-color: white;
+
+    width: 100%;
+    margin: 5 auto;
+    padding: 10px 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-h1{
-    color:red;
+.dashboard_search_date{
+    
+    position: relative;
+    margin: 5px 10px;
+    width:100%;
+    padding: 10px auto;
+
 }
-.test_h1{
-    color:red;
+.dashboard_data_tap
+{
+    position: relative;
+
+    box-shadow: inset 0 2px 5px rgb(0 0 0 / 5%);
+    border-radius: 10px;
+    border-color: #eee;
+    background-color: white;
+    background-color: goldenrod;
+
+    width: 100%;
+    height : 400px;
+    margin: 0 0;
+    padding: 0px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:nowrap;
+}
+.dashboard_data_A,.dashboard_data_B{
+    position: relative;
+
+    box-shadow: inset 0 2px 5px rgb(0 0 0 / 5%);
+    border-radius: 10px;
+    border-color: #eee;
+    background-color: white;
+    background-color: gray;
+    
+    height: 90%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dashboard_data_A{
+    
+
+    width: 20%;    
+    margin: 2% 2%;
+    padding: 0;
+
 }
 
-.logo_test
-{
-    height:23px;
-    width:97px;
-    background:url(static/iu.jpg)
+.dashboard_data_B{
+    width: 80%;
+    
+    margin: 2% 2%;
+    padding: 0;
+}
+
+
+
+
+
+
+
+.dashboard_first_block{
+    background-color: white;
+    position: relative;
+    width: 100%;
+    padding: 10px 17px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgb(0 0 0 / 5%);
+    border-color: #eee;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+}
+.test_wrapper{
+    width: 800px;
+    height: 400px;
+    border: 4px solid black;
+    background-color: red;
+
+    display:flex;/* 정렬을 위한 컨테이너 */
+    justify-content: center;/* 주축 방향 정렬 (끝으로 붙이고 싶을때 : flex-end)*/
+    align-items: center;/* 교차축 방향 정렬 (끝으로 붙이고 싶을 때 : flex-end)*/
+
+}
+.dashboard_first_block_yymmdd{
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border: 4px solid black;
+    background-color: pink;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

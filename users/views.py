@@ -4,6 +4,29 @@ from django.shortcuts import redirect
 from .models import User
 
 
+
+
+
+def goto_javascript_study(request):
+    return render(request, "users/javascript_study.html")
+
+
+def goto_lesson_reservation(request):
+    return render(request, "users/lesson_reservation.html")
+
+
+def goto_block_test(request):
+    return render(request, "users/block_test.html")
+
+
+def goto_css_study(request):
+    return render(request, "users/css_study.html")
+
+
+def goto_dashboard(request):
+    return render(request, "users/dashboard.html")
+
+
 def test_page(request):
     return render(request, "users/testpage.html")
 
