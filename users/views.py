@@ -33,6 +33,7 @@ def test_page(request):
 
 def login_view(request):
     if request.method == "POST":
+        print(request.POST)
         username = request.POST["username"]
         password = request.POST["password"]
         user = authenticate(username=username, password=password)

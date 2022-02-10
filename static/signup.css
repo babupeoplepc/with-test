@@ -1,0 +1,141 @@
+.address_dummy{
+    width:100%;
+    
+    margin: 10px;
+}
+.signup_address_number{
+    margin-bottom :10px;
+}
+.signup_address_number > .form-control{
+    max-width: 120px;
+    display:inline-block;   
+}
+
+.signup_address_number > .signup_home_address_search{
+
+}
+
+
+
+.signup_home_address_search{
+    background-color : white;
+    
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+.signup_home_address_search:hover{
+    background-color : white;
+    background: #e4e3e3;
+}
+
+
+.custom_select{
+    position: relative;
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    
+
+}
+
+.ymd_select:hover{
+    background: #e4e3e3;
+}
+.ymd_select:focus{
+    background: #f3f3f3;
+}
+
+.ymd_select > option{
+    background : white;
+    border : 5px;
+    border-color: blue;
+}
+
+.ymd_select{
+    
+    font-size:0.9rem;
+    border-radius: 5px;
+    
+    background: white;
+    color: black;
+    border: 1px solid ;
+    border-color:#ced4da;
+    flex-basis:33%;
+    height: 40px;
+
+
+    
+}
+.year_select, .month_select, .day_select{
+    
+    
+    
+}
+
+
+.custom_arrow{
+    position: absolute;
+    top:0;
+    right:0;
+    display: block;
+    background-color: red;
+    height: 100%;
+    width: 4rem;
+}
+
+.singup_form_group_A_label{
+    font-weight: 800;
+    line-height: 2.471;
+}
+.signup_form_group{
+    display: flex;
+    flex-wrap:nowrap;
+    font-weight: 400;
+    line-height: 1.471;
+}
+.signup_form_group_A{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    padding-bottom: 8px;
+    flex-basis:20%;
+}
+.signup_form_group_B{
+    
+    flex-basis:50%;
+}
+.signup_form_group_C{
+    flex-basis:30%;
+}
+.gender_select{
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+.gender_select_radio{
+    display: none;
+
+}
+.gender_select_label{
+    margin:0px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color : black;
+    background-color: white;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+.gender_select_label:hover{
+    background-color: rgba(0,0,0,0.10);
+}
+.gender_select_label:not(:last-of-type){
+    border-right: 1px solid #006b56;
+}
+.gender_select_radio:checked+ .gender_select_label{
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #fff;
+}

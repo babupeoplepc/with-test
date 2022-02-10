@@ -13,6 +13,4 @@ urlpatterns = [
     path("block_test/", views.goto_block_test, name="block_test_page"),
     path("lesson_reservation/", views.goto_lesson_reservation, name="lesson_reservation_page"),
     path("javascript_study/", views.goto_javascript_study, name="javascript_study_page"),
-
-
 ]

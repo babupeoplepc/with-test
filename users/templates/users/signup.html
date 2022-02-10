@@ -1,29 +1,206 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>signup page</title>
-</head>
-<body>
-<br>
-<form action="" method="POST">
-    {% csrf_token %}
-    <p>아이디</p>
-    <input type="text" name="username">
-    <p>비밀번호</p>
-    <input type="password" name="password">
-    <p>성</p>
-    <input type="text" name="firstname">
-    <p>이름</p>
-    <input type="text" name="lastname">
-    <p>이메일</p>
-    <input type="text" name="email">
-    <p>학번</p>
-    <input type="text" name="student_id">
-    <input type="submit" value="회원가입">
-
-</form>
 
 
-</body>
-</html>
+
+    {% extends 'users/testpage.html' %}
+
+    {% block navigation_content %}
+    {% load static %}
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <link rel="stylesheet" type="text/css"  href="{% static 'signup.css' %}?after">
+    <link rel="stylesheet" type="text/css"  href="{% static 'main.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
+    <script type="text/javascript" src="{% static 'signup.js' %}"></script>
+    <div class="tab-content">
+        <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+            <div class="main-card mb-3 card">
+                <div class="card-body"><h5 class="card-title">수강생 등록</h5>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_name" class="singup_form_group_A_label">이름*</label>
+                                
+                            </div>
+                            <div class = signup_form_group_B>
+                                <div class="position-relative form-group">
+                                    <input name="student_name" id="student_name" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="gender_select" class="singup_form_group_A_label">성별*</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <div class="gender_select" id="gender_select">
+                                    <input class="gender_select_radio" type="radio" value="man" name="gender" id="gender_man" checked="checked">
+                                    <label class="gender_select_label" for="gender_man">남자</label>
+                                    <input class="gender_select_radio" type="radio" value="woman" name="gender" id="gender_woman">
+                                    <label class="gender_select_label" for="gender_woman">여자</label>
+                                </div>
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_email" class="singup_form_group_A_label">이메일*</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <input name="password" id="student_email" type="text" class="form-control">
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_password" class="singup_form_group_A_label">비밀번호*</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <input name="student_password" id="student_password" type="password" class="form-control">
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_password2" class="singup_form_group_A_label">비밀번호 재확인*</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <input name="student_password2" id="student_password2" type="password" class="form-control">
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_phone_number" class="singup_form_group_A_label">전화번호*</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <input name="student_phone_number" id="student_phone_number" type="text" class="form-control">
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_birth" class="singup_form_group_A_label">생년월일*</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <div class="custom_select">
+                                    <select class="ymd_select year_select" name="year">
+                                    </select>
+                                    <select class="ymd_select month_select" name="month">
+                                    </select>
+                                    <select class="ymd_select day_select" name="day">
+                                    </select>
+                                    <script>
+        
+                                        $(document).ready(function(){
+                                            setDateBox();
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_home_address" class="singup_form_group_A_label">집주소</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <div class="signup_address_number">
+                                    <input name="student_home_address_number" id="student_home_address_number" type="text" class="form-control">
+                                    <button class="signup_home_address_search" type="button" style="width:60px; height:32px;" onclick="openZipSearch()">검색</button><br>
+                                    
+                                </div>
+                                
+                                <input name="student_home_address" id="student_home_address" type="text" class="form-control">
+                                <div class="address_dummy"></div>
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_job" class="singup_form_group_A_label">직업</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <input name="student_job" id="student_job" type="text" class="form-control">
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_visit" class="singup_form_group_A_label">방문경로</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <div class="student_visit_group">
+                                    
+                                </div>
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_comment" class="singup_form_group_A_label">수강생 참고 사항</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <textarea name="student_comment" id="student_comment" type="text" class="form-control" rows="4" placeholder="재수강 유도 시 참고사항, 수강생의 신상, 성향, 주의할 점"></textarea>
+                                <div class="address_dummy"></div>
+                            </div>
+                           
+                            <div class = signup_form_group_C></div>
+                            
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_lesson_comment" class="singup_form_group_A_label">레슨 참고 사항</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <textarea name="student_lesson_comment" id="student_lesson_comment" type="text" class="form-control" rows="4" placeholder="경력, 희망 장르/분야, 수강목적 등등"></textarea>
+                                <div class="address_dummy"></div>
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        <div class="signup_form_group">
+                            <div class = signup_form_group_A>
+                                <label for="student_push_stop" class="singup_form_group_A_label">푸쉬 등록 거부</label>
+                            </div>
+                            <div class = signup_form_group_B>
+                                <div class="position-relative form-check">
+                                    <input name="student_push_stop" id="student_push_stop" type="checkbox" class="form-check-input">
+                                    <label for="exampleCheck" class="form-check-label">거부</label>
+                                </div>                                
+                            </div>
+                            <div class = signup_form_group_C></div>
+                        </div>
+                        
+
+                        <button class="mt-2 btn btn-primary">Sign in</button>
+
+                    </form>
+                </div>                    
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+        
+
+    
+</div>
+
+{% endblock %}
+
+
+                        <p>이름</p>
+                        <input type="text" name="username">
+                        <p>비밀번호</p>
+                        <input type="password" name="password">
+                        <p>성</p>
+                        <input type="text" name="firstname">
+                        <p>이름</p>
+                        <input type="text" name="lastname">
+                        <p>이메일</p>
+                        <input type="text" name="email">
+                        <p>학번</p>
+                        <input type="text" name="student_id">
+                        <input type="submit" value="회원가입">
