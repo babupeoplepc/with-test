@@ -1,3 +1,59 @@
+.student_visit_group > .example{
+    border: 1px solid #e5e6e7;   
+    display : flex;
+    flex-wrap: nowrap;
+    margin: 2px;
+}
+.example > .example_A{
+    flex-basis : 30%;
+}
+.example > .example_B{
+    flex-basis : 50%;
+}
+.exmaple_B > .form-control{
+    border : 0px;
+}
+
+
+.visit_select_example{
+    border:0px;
+    margin:0px;
+    padding:0px;
+    
+}
+
+.student_visit_group{
+    display: flex;
+    flex-wrap :wrap;
+    overflow: hidden;
+
+}
+
+.visit_select_label{
+    margin:0px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color : black;
+    background-color: white;
+    cursor: pointer;
+    transition: background 0.5s;
+    border: 1px solid #e5e6e7;
+}
+.visit_select_label:hover{
+    background-color: rgba(0,0,0,0.10);
+}
+
+.visit_select_radio:checked+ .visit_select_label{
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #fff;
+}
+
+.visit_select_radio{
+    display: none;
+}
+
 .address_dummy{
     width:100%;
     
