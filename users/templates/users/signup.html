@@ -34,9 +34,9 @@
                             </div>
                             <div class = signup_form_group_B>
                                 <div class="gender_select" id="gender_select">
-                                    <input class="gender_select_radio" type="radio" value="man" name="gender" id="gender_man" checked="checked">
+                                    <input class="gender_select_radio" type="radio" value="man" name="student_gender" id="gender_man" checked="checked">
                                     <label class="gender_select_label" for="gender_man">남자</label>
-                                    <input class="gender_select_radio" type="radio" value="woman" name="gender" id="gender_woman">
+                                    <input class="gender_select_radio" type="radio" value="woman" name="student_gender" id="gender_woman">
                                     <label class="gender_select_label" for="gender_woman">여자</label>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                                 <label for="student_email" class="singup_form_group_A_label">이메일*</label>
                             </div>
                             <div class = signup_form_group_B>
-                                <input name="password" id="student_email" type="text" class="form-control">
+                                <input name="student_email" id="student_email" type="text" class="form-control">
                             </div>
                             <div class = signup_form_group_C></div>
                         </div>
@@ -84,11 +84,11 @@
                             </div>
                             <div class = signup_form_group_B>
                                 <div class="custom_select">
-                                    <select class="ymd_select year_select" name="year">
+                                    <select class="ymd_select year_select" name="student_birth_year">
                                     </select>
-                                    <select class="ymd_select month_select" name="month">
+                                    <select class="ymd_select month_select" name="student_birth_month">
                                     </select>
-                                    <select class="ymd_select day_select" name="day">
+                                    <select class="ymd_select day_select" name="student_birth_day">
                                     </select>
                                     <script>
         
@@ -159,6 +159,60 @@
                                         <div class="exmaple_B">
                                             <input class="form-control visit_select_example" type="text" name="student_visit_example" placeholder="ex>부평점"></div>
                                     </div>
+                                    <input class="visit_select_radio" type="radio" value="blog" name="student_visit" id="blog">
+                                    <label class="visit_select_label" for="blog">블로그</label>
+                                    
+                                    <input class="visit_select_radio" type="radio" value="cafe" name="student_visit" id="cafe">
+                                    <label class="visit_select_label" for="cafe">카페</label>
+
+                                    <input class="visit_select_radio" type="radio" value="tohaltough" name="student_visit" id="tohaltough">
+                                    <label class="visit_select_label" for="tohaltough">토할터프 미니홈피</label>
+
+                                    <input class="visit_select_radio" type="radio" value="mapia" name="student_visit" id="mapia">
+                                    <label class="visit_select_label" for="mapia">마피아(피치남)</label>
+
+                                    <input class="visit_select_radio" type="radio" value="facebook" name="student_visit" id="facebook">
+                                    <label class="visit_select_label" for="facebook">페이스북</label>
+
+                                    <input class="visit_select_radio" type="radio" value="instagram" name="student_visit" id="instagram">
+                                    <label class="visit_select_label" for="instagram">인스타그램</label>
+
+                                    <input class="visit_select_radio" type="radio" value="youtube" name="student_visit" id="youtube">
+                                    <label class="visit_select_label" for="youtube">유투브</label>
+                                    
+                                    <input class="visit_select_radio" type="radio" value="TV" name="student_visit" id="TV">
+                                    <label class="visit_select_label" for="TV">tv</label>
+                                    
+                                    <input class="visit_select_radio" type="radio" value="subway" name="student_visit" id="subway">
+                                    <label class="visit_select_label" for="subway">지하철</label>
+                                    
+                                    <input class="visit_select_radio" type="radio" value="bus_station" name="student_visit" id="bus_station">
+                                    <label class="visit_select_label" for="bus_station">버스정류장</label>
+                                    
+                                    <input class="visit_select_radio" type="radio" value="coupon" name="student_visit" id="coupon">
+                                    <label class="visit_select_label" for="coupon">쿠폰</label>
+                                    
+                                    <input class="visit_select_radio" type="radio" value="leaflet" name="student_visit" id="leaflet">
+                                    <label class="visit_select_label" for="leaflet">전단지</label>
+
+                                    <input class="visit_select_radio" type="radio" value="sign" name="student_visit" id="sign">
+                                    <label class="visit_select_label" for="sign">간판</label>
+                                    
+                                    <input class="visit_select_radio" type="radio" value="mouse" name="student_visit" id="mouse">
+                                    <label class="visit_select_label" for="mouse">입간판</label>
+                                    
+                                    <input class="visit_select_radio" type="radio" value="other_campany" name="student_visit" id="other_campany">
+                                    <label class="visit_select_label" for="other_campany">제휴 업체</label>
+                                    
+                                    <div class="example">
+                                        <div class="exmaple_A">
+                                            <input class="visit_select_radio" type="radio" value="other" name="student_visit" id="other">
+                                            <label class="visit_select_label" for="other">그외</label>
+                                        </div>
+                                        
+                                        <div class="exmaple_B">
+                                            <input class="form-control visit_select_example" type="text" name="student_visit_example" placeholder="검색어"></div>
+                                    </div>
 
                                 </div>
                             </div>
@@ -199,16 +253,59 @@
                             <div class = signup_form_group_C></div>
                         </div>
                         
-
-                        <button class="mt-2 btn btn-primary">Sign in</button>
-
+                        <input type="submit" class="mt-2 btn btn-primary" value="회원가입" onclick="return registerMember();">
                     </form>
                 </div>                    
             </div>
         </div>
     </div>
     
-
+<script>
+    function registerMember()
+    {
+        
+        member_name = document.getElementById("student_name").value;
+        member_email = document.getElementById("student_email").value;
+        member_pwd1 = document.getElementById("student_password").value;
+        member_pwd2 = document.getElementById("student_password2").value;
+        member_pwd2 = document.getElementById("student_password2").value;
+        member_phone_number = document.getElementById("student_phone_number").value;
+        
+        if(member_name == "")
+        {
+            alert("이름 칸이 비었습니다.")
+            document.getElementById("student_name").focus();
+            
+            return false;
+        }
+        if(member_email == "")
+        {
+            alert("이메일 칸이 비었습니다.")
+            document.getElementById("student_email").focus();
+            return false;
+        }
+        if(member_pwd1 == "")
+        {
+            alert("비밀번호를 입력해주세요")
+            document.getElementById("student_password").focus();
+            return false;
+        }
+        if(member_pwd1 != member_pwd2)
+        {
+            alert("비밀번호가 틀립니다. ")
+            document.getElementById("student_password2").focus();
+            return false;
+        }
+        if(member_phone_number == "")
+        {
+            alert("전화번호를 입력해주세요")
+            document.getElementById("student_phone_number").focus();
+            return false;
+        }
+        
+                
+    }
+</script>
     
 
         
